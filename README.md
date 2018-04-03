@@ -45,7 +45,7 @@ Then just run `mix format` and the interpolated code should be formatted for you
 ```elixir
 def deps do
   [
-    {:iexample, "~> 0.2"}
+    {:iexample, "~> 0.1"}
   ]
 end
 ```
