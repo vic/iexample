@@ -10,6 +10,7 @@ defmodule IExample do
   For actual usage example, see `test/support/example.ex`
   """
   defmacro iexample(result, do: body) do
+    indent = "    "
     result = Macro.to_string(result)
 
     example =
@@ -17,12 +18,12 @@ defmodule IExample do
       |> Macro.to_string
       |> Code.format_string!
       |> to_string
-      |> String.replace(~r/^/, "...> ")
-      |> String.replace_leading("...>", "iex>")
+      |> String.replace(~r/^/, "#{indent}...> ")
+      |> String.replace_leading("#{indent}...>", "iex>")
 
     """
-    #{example}
-    #{result}
+    #{indent}#{example}
+    #{indent}#{result}
     """
   end
 end
