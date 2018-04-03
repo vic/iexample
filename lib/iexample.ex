@@ -14,7 +14,9 @@ defmodule IExample do
 
     example =
       body
-      |> Macro.to_string()
+      |> Macro.to_string
+      |> Code.format_string!
+      |> to_string
       |> String.replace(~r/^/, "...> ")
       |> String.replace_leading("...>", "iex>")
 
